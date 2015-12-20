@@ -6,18 +6,14 @@ using System.Threading.Tasks;
 
 namespace UrbanIssues.Models
 {
-	public class Comment
+	public class Image
 	{
 		public int Id { get; set; }
 
-		public string Content { get; set; }
-
-		public string ApplicationUserId { get; set; }
-
-		public virtual ApplicationUser User { get; set; }
+		public string Url { get; set; }
 
 		public int IssueId { get; set; }
 
-		public virtual Issue Issue { get; set; }
+		public Issue Issue { get; set; }
 	}
 }

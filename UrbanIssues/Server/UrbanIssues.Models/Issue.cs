@@ -9,10 +9,12 @@ namespace UrbanIssues.Models
 	public class Issue
 	{
 		private ICollection<Comment> comments;
+		private ICollection<Image> images;
 
 		public Issue()
 		{
 			this.comments = new HashSet<Comment>();
+			this.images = new HashSet<Image>();
 		}
 
 		public int Id { get; set; }
@@ -44,6 +46,18 @@ namespace UrbanIssues.Models
 			set
 			{
 				this.comments = value;
+			}
+		}
+
+		public ICollection<Image> Images
+		{
+			get
+			{
+				return this.images;
+			}
+			set
+			{
+				this.images = value;
 			}
 		}
 	}

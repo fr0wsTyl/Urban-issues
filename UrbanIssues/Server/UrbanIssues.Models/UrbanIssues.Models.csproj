@@ -52,6 +52,7 @@
     <Compile Include="Category.cs" />
     <Compile Include="City.cs" />
     <Compile Include="Comment.cs" />
+    <Compile Include="Image.cs" />
     <Compile Include="Issue.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
