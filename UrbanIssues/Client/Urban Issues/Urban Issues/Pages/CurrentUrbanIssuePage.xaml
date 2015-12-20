@@ -6,8 +6,16 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
-
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+	<Page.BottomAppBar>
+		<AppBar>
+			<StackPanel Orientation="Vertical">
+				<HyperlinkButton Grid.Row="1" Name="LogOut"  HorizontalAlignment="Center" Margin="0, 0, 30, 0" Content="Log out"/>
+				<HyperlinkButton Grid.Row="1" Name="About"  HorizontalAlignment="Center" Margin="0, 0, 30, 0" Content="About"/>
+				<HyperlinkButton Grid.Row="1" Name="Help"  HorizontalAlignment="Center" Margin="0, 0, 30, 0" Content="Help"/>
+			</StackPanel>
+		</AppBar>
+	</Page.BottomAppBar>
+	<Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     </Grid>
 </Page>
