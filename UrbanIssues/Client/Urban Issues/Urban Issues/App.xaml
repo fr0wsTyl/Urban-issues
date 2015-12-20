@@ -8,6 +8,11 @@
 		<x:String
 			x:Key="TitleText">Urban Issues</x:String>
 
+		<Style x:Key="LogoStyle"
+			   TargetType="Image">
+			<Setter Property="Source" Value="../Assets/Images/Urban-Issues-Logo.jpg"/>
+		</Style>
+		
 		<Style TargetType="TextBlock"
 			   x:Key="TitleStyle">
 			<Setter Property="FontSize" Value="26"/>

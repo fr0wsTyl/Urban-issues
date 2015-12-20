@@ -3,20 +3,70 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:UrbanIssues.Pages"
-    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:view="using:UrbanIssues.Views"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
+
 	<Page.BottomAppBar>
 		<AppBar>
-			<StackPanel Orientation="Vertical">
-				<HyperlinkButton Grid.Row="1" Name="LogOut"  HorizontalAlignment="Center" Margin="0, 0, 30, 0" Content="Log out"/>
-				<HyperlinkButton Grid.Row="1" Name="About"  HorizontalAlignment="Center" Margin="0, 0, 30, 0" Content="About"/>
-				<HyperlinkButton Grid.Row="1" Name="Help"  HorizontalAlignment="Center" Margin="0, 0, 30, 0" Content="Help"/>
-			</StackPanel>
+			<view:BottomTabBar/>
 		</AppBar>
 	</Page.BottomAppBar>
-	
-	<Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    </Grid>
+	<Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="40"/>
+			<RowDefinition Height="1*"/>
+		</Grid.RowDefinitions>
+
+		<!-- Header logo here -->
+		<view:HeaderTitle/>
+		
+		<Grid Name="PanelCreateIssue"
+			  Grid.Row="1">
+			<StackPanel>
+				<TextBlock>Category</TextBlock>
+				<TextBox Name="Category"></TextBox>
+
+				<TextBlock>Description</TextBlock>
+				<TextBox Name="Description"></TextBox>
+
+				<TextBlock>Location</TextBlock>
+				<Button Name="Location" Click="OnLocationButtonClick">0</Button>
+
+				<TextBlock>Latitude</TextBlock>
+				<TextBox Name="LocationLatitude"></TextBox>
+				<TextBlock>Longitude</TextBlock>
+				<TextBox Name="LocationLongitude"></TextBox>
+
+				<Grid>
+					<Grid.RowDefinitions>
+						<RowDefinition Height="60"/>
+						<RowDefinition Height="1*"/>
+					</Grid.RowDefinitions>
+					<Grid Grid.Row="0">
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="1*"/>
+							<ColumnDefinition Width="1*"/>
+							<ColumnDefinition Width="1*"/>
+						</Grid.ColumnDefinitions>
+						<Grid Grid.Column="0">
+							<Button Name="AddPicture" Click="OnAddPictureButtonClick">Add Picture</Button>
+						</Grid>
+						<Grid Grid.Column="1">
+							<Button Name="CreateIssue" Click="OnCreateIssueButtonClick">Create Issue</Button>
+						</Grid>
+						<Grid Grid.Column="2">
+							<Button Name="CancelIssue" Click="OnCancelIssueButtonClick">Cancel</Button>
+						</Grid>
+					</Grid>
+					<Grid Grid.Row="1">
+						<StackPanel Name="PicturesToAdd">
+						</StackPanel>
+					</Grid>
+				</Grid>
+			</StackPanel>
+		</Grid>
+	</Grid>
 </Page>
