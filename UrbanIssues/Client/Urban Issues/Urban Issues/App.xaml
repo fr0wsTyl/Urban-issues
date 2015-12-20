@@ -4,5 +4,14 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:Urban_Issues"
     RequestedTheme="Light">
+	<Application.Resources>
+		<x:String
+			x:Key="TitleText">Urban Issues</x:String>
 
+		<Style TargetType="TextBlock"
+			   x:Key="TitleStyle">
+			<Setter Property="FontSize" Value="26"/>
+			<Setter Property="TextAlignment" Value="Center"/>
+		</Style>
+	</Application.Resources>
 </Application>
